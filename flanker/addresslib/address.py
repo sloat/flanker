@@ -319,6 +319,10 @@ def validate_address(addr_spec, metrics=False, skip_remote_checks=False):
 
     # lookup custom local-part grammar if it exists
     bstart = time()
+
+    if isinstance(exchanger, bytes):
+        exchanger = exchanger.decode()
+
     plugin = plugin_for_esp(exchanger)
     mtimes['custom_grammar'] = time() - bstart
     if plugin and plugin.validate(paddr) is False:

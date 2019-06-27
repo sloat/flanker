@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 tests_require = [
     'coverage',
-    'coveralls',
+    # 'coveralls',
     'mock',
     'nose',
 ],
